@@ -1,7 +1,8 @@
 package cc;
 
 import lua.Table;
-import cc.Colors;
+import cc.Colors.Color;
+import cc.Colors.Color;
 
 @:native("redstone")
 extern class Redstone {

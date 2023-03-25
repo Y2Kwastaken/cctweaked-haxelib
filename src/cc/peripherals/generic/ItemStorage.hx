@@ -1,4 +1,4 @@
-package cc.periphs;
+package cc.peripherals.generic;
 
 import lua.Table;
 

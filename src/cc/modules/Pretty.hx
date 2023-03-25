@@ -1,28 +1,30 @@
 package cc.modules;
 
-import cc.Colors.Color;
 import haxe.Rest;
+import cc.Colors.Color;
 
 typedef Doc = Dynamic;
 
-interface PrettyPrintOptions {
-	public var function_args:Bool;
-	public var function_source:Bool;
+extern class PrettyPrintOptions {
+    public var functionArgs:Bool;
+    public var funtionSource:Bool;
 }
 
-@:luaRequire('cc.pretty')
+@:luaRequire("ccpretty")
 extern class Pretty {
-	public static var empty:Doc;
-	public static var space:Doc;
-	public static var line:Doc;
-	public static var space_line:Doc;
-	public static function text(text:String, ?colour:Color):Doc;
-	public static function concat(docs:Rest<Doc>):Doc;
-	public static function nest(depth:Int, doc:Doc):Doc;
-	public static function group(doc:Doc):Doc;
-	public static function write(doc:Doc, ?ribbon_frac:Int):Void;
-	public static function print(doc:Doc, ?ribbon_frac:Int):Void;
-	public static function render(doc:Doc, ?width:Int, ?ribbon_frac:Int):String;
-	public static function pretty(obj:Dynamic, ?options:PrettyPrintOptions):String;
-	public static function pretty_print(obj:Dynamic, ?options:PrettyPrintOptions, ?ribbon_frac:Int):Void;
+    
+    public static var empty:Doc;
+    public static var space:Doc;
+    public static var line:Doc;
+    @:native("space_line")
+    public static var spaceLine:Doc;
+    public static function text(text:String, color:Color):Doc;
+    public static function concat(docs:Rest<Doc>):Doc;
+    public static function group(doc:Doc):Doc;
+    public static function write(doc:Doc, ?ribbonFrac:Float):String;
+    public static function print(doc:Doc, ?ribbonFrac:Float):Void;
+    public static function render(doc:Doc, ?width:Int, ?ribbonFrac:Float):String;
+    public static function pretty(obj:Dynamic, ?options:PrettyPrintOptions):Doc;
+    public static function prettyPrint(obj:Dynamic, ?options:PrettyPrintOptions, ?ribbondFrac:Float):Void;
+    
 }

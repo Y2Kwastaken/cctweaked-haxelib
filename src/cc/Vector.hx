@@ -2,9 +2,9 @@ package cc;
 
 @:native("vector")
 extern class Vector {
-	@:native("new") public static function create(x:Int, y:Int, z:Int):Vector;
+    @:native("new") public static function create(x:Int, y:Int, z:Int):Vector;
 
-	public function add(other:Vector):Vector;
+    public function add(other:Vector):Vector;
 	public function sub(other:Vector):Vector;
 	public function mul(n:Float):Vector;
 	public function div(n:Float):Vector;

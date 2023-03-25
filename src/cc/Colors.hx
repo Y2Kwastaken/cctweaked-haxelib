@@ -4,11 +4,20 @@ import haxe.Rest;
 
 typedef Color = Int;
 
+@:multiReturn
+extern class RGB {
+	public var r:Int;
+	public var g:Int;
+	public var b:Int;
+}
+
 @:native("colors")
 extern class Colors {
 	public static function combine(colors:Rest<Color>):Color;
-	public static function subtract(from:Color, colors:Rest<Color>):Color;
+	public static function subtract(color:Color, colors:Rest<Color>):Color;
 	public static function test(it:Color, check:Color):Bool;
+	public static function packRGB(r:Int, g:Int, b:Int):Int;
+	public static function unpackRGB(color:Color):RGB;
 
 	public static var white:Color;
 	public static var orange:Color;
@@ -18,9 +27,7 @@ extern class Colors {
 	public static var lime:Color;
 	public static var pink:Color;
 	public static var gray:Color;
-	public static var grey:Color;
 	public static var lightGray:Color;
-	public static var lightGrey:Color;
 	public static var cyan:Color;
 	public static var purple:Color;
 	public static var blue:Color;
