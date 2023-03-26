@@ -1,10 +1,11 @@
 package cc.peripherals;
 
+@:luaDotMethod
 extern class Computer {
-    public static function turnOn():Void;
-    public static function shutdown():Void;
-    public static function reboot():Void;
-    public static function getID():Int;
-    public static function isOn():Bool;
-    public static function getLabel():String;
+	public function turnOn():Void;
+	public function shutdown():Void;
+	public function reboot():Void;
+	public function getID():Int;
+	public function isOn():Bool;
+	public function getLabel():String;
 }

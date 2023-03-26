@@ -30,7 +30,7 @@ extern class Terminal {
 	public static function getBackgroundColor():Color;
 	public static function setBackgroundColor(color:Color):Void;
 	public static function isColor():Bool;
-	public static function blit(text:String, textColor:Color, backgroundfColor:Color):Void;
+	public static function blit(text:String, textColor:String, backgroundfColor:String):Void;
 	public static overload function setPaletteColor(color:Color, r:Int, g:Int, b:Int):Void;
 	public static overload function setPaletteColor(color:Color, rgb:Int):Void;
 	public static function getPalleteColor(color:Color):RGB;
@@ -59,7 +59,7 @@ extern class Term {
 	public static function getBackgroundColor():Color;
 	public static function setBackgroundColor(color:Color):Void;
 	public static function isColor():Bool;
-	public static function blit(text:String, textColor:Color, backgroundfColor:Color):Void;
+	public static function blit(text:String, textColor:String, backgroundfColor:String):Void;
 	public static overload function setPaletteColor(color:Color, r:Int, g:Int, b:Int):Void;
 	public static overload function setPaletteColor(color:Color, rgb:Int):Void;
 }

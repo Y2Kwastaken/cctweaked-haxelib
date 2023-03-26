@@ -19,9 +19,9 @@ abstract Instrument(String) {
 	var Banjo = "banjo";
 	var Pling = "pling";
 }
-
+@:luaDotMethod
 extern class Speaker {
-	public static function playNote(instrument:Instrument, ?volume:Int, ?pitch:Int):Void;
-	public static function playAudio(audio:Array<Int>, ?volume:Int):Void;
-	public static function stop():Void;
+	public function playNote(instrument:Instrument, ?volume:Int, ?pitch:Int):Void;
+	public function playAudio(audio:Array<Int>, ?volume:Int):Void;
+	public function stop():Void;
 }

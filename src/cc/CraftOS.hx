@@ -31,15 +31,6 @@ extern class CraftOS {
 	public static function days(?locale:Locale):Float;
 	public static function epoch(?locale:Locale):Float;
 	public static function date(?format:String, ?time:Float):String;
-
-	@:native("pullEvent") private static function _pullEvent(?type:String):Dynamic;
-	@:native("pullEventRaw") private static function _pullEventRaw(?type:String):Dynamic;
-
-	public static inline function pullEvent(?type:String):Table<Int, Dynamic> {
-		return cast TableTools.pack(_pullEvent(type));
-	}
-
-	public static inline function pullEventRaw(?type:String):Table<Int, Dynamic> {
-		return cast TableTools.pack(_pullEventRaw(type));
-	}
+	public static function pullEvent<T>(?type:String):T;
+	public static function pullEventRaw<T>(?type:String):T;
 }

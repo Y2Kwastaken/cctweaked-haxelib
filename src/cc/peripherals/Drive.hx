@@ -1,14 +1,15 @@
 package cc.peripherals;
 
+@:luaDotMethod
 extern class Drive {
-    public static function isDiskPresent():Bool;
-    public static function setDiskLabel(?label:String):Void;
-    public static function hasData():Bool;
-    public static function getMountPoint():String;
-    public static function hasAudio():Bool;
-    public static function getAudioTitle():String;
-    public static function playAudio():Void;
-    public static function stopAudio():Void;
-    public static function ejectDisk():Void;
-    public static function getDiskID():Int;
+	public function isDiskPresent():Bool;
+	public function setDiskLabel(?label:String):Void;
+	public function hasData():Bool;
+	public function getMountPoint():String;
+	public function hasAudio():Bool;
+	public function getAudioTitle():String;
+	public function playAudio():Void;
+	public function stopAudio():Void;
+	public function ejectDisk():Void;
+	public function getDiskID():Int;
 }

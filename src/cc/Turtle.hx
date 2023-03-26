@@ -1,6 +1,9 @@
 package cc;
 
+import lua.Table;
 import haxe.extern.EitherType;
+
+typedef ItemDetail = Table<String, Dynamic>;
 
 @:multiReturn
 extern class TurtleActionResult {
@@ -8,22 +11,10 @@ extern class TurtleActionResult {
 	var message:String;
 }
 
-extern class TurtleItemDetail {
-	public var name:String;
-	public var damage:Int;
-	public var count:Int;
-}
-
-extern class TurtleBlockDetail {
-	public var name:String;
-	public var metadata:Int;
-	public var state:Map<String, Dynamic>;
-}
-
 @:multiReturn
-extern class TurtleInspectResult {
+extern class InspectResult {
 	var success:Bool;
-	var result:EitherType<String, TurtleBlockDetail>;
+	var result:Table<String, Dynamic>;
 }
 
 @:native("turtle")
@@ -66,10 +57,8 @@ extern class Turtle {
 	public static function getFuelLimit():Int;
 	public static function equipLeft():TurtleActionResult;
 	public static function equipRight():TurtleActionResult;
-	public static function inspect():TurtleInspectResult;
-    public static function inspectUp():TurtleInspectResult;
-    public static function inspectDown():TurtleInspectResult;
-    public static function getItemDetail(slot:Int, ?detailed:Bool):TurtleItemDetail;
-    
-
+	public static function inspect():InspectResult;
+	public static function inspectUp():InspectResult;
+	public static function inspectDown():InspectResult;
+	public static function getItemDetail(slot:Int, ?detailed:Bool):ItemDetail;
 }

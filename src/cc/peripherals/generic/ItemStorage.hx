@@ -14,6 +14,7 @@ interface DetailedItemInfo extends ReducedItemInfo {
 	public var tags:Table<String, Bool>;
 }
 
+@:luaDotMethod
 extern class ItemStorage {
 	public function size():Int; //	Get the size of this inventory.
 	public function list():Table<Int, ReducedItemInfo>; //	List all items in this inventory.

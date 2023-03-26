@@ -18,6 +18,7 @@ extern class Colors {
 	public static function test(it:Color, check:Color):Bool;
 	public static function packRGB(r:Int, g:Int, b:Int):Int;
 	public static function unpackRGB(color:Color):RGB;
+	public static function toBlit(color:Color):String;
 
 	public static var white:Color;
 	public static var orange:Color;
