@@ -4,7 +4,7 @@ import haxe.extern.EitherType;
 import lua.Table;
 
 @:multiReturn
-extern class ChunkAnalyzeResult {
+extern class ChunkScanResult {
 	public var blocks:Table<Int, BlockProperties>;
 	public var error:String;
 }
@@ -18,12 +18,10 @@ extern class BlockProperties {
 }
 
 extern class GeoScanner {
-	
-
 	public function getFuelLevel():Int;
 	public function getFuelMaxLevel():Int;
 	public function cost(radius:Int):Int;
-	public function scan(radius:Int):ChunkAnalyzeResult;
+	public function scan(radius:Int):ChunkScanResult;
 	public function getScanCooldown():Int;
-	public function chunkAnalyze():ChunkAnalyzeResult;
+	public function chunkAnalyze():Table<String, Int>;
 }
