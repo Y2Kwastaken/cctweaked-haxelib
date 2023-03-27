@@ -1,4 +1,4 @@
-package cc.extras.peripherals;
+package cc.ap.peripherals;
 
 import haxe.extern.EitherType;
 import lua.Table;

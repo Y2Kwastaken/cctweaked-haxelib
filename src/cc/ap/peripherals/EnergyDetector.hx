@@ -1,4 +1,4 @@
-package cc.extras.peripherals;
+package cc.ap.peripherals;
 
 @:luaDotMethod
 extern class EnergyDetector {
